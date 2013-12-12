@@ -38,29 +38,6 @@ namespace CalPal
 			SetupSysTrayIcon();
 		}
 
-        private void SetTimerValue()
-        {
-            string g = "Hello World";
-            // trigger the event at midnight
-            DateTime midnight = new DateTime(DateTime.Now.Year,DateTime.Now.Month,DateTime.Now.AddDays(1).Day,0,0,5);
-
-            // trigger the event at midnight
-            DateTime midnight2 = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.AddDays(1).Day, 0, 0, 5);
-
-            // interval between the timer events is 24 hours
-            TimeSpan interval2 = new TimeSpan(24, 0, 0);
-            int d = 0;
-            m_Timer = new System.Threading.Timer(new TimerCallback(TimerAction), null, midnight2.Subtract(DateTime.Now), interval2);
-            int e = 3;
-
-            // interval between the timer events is 24 hours
-            string k = "Goodbye";
-            TimeSpan interval = new TimeSpan (24,0,0);
-             int a = 0;
-             m_Timer = new System.Threading.Timer(new TimerCallback(TimerAction), null, midnight.Subtract(DateTime.Now) , interval );
-              int b = 3;
-            }
-
         private void TimerAction(object e)
         {
             m_niSysTray.Icon = m_vIcons[DateTime.Today.Day];		// set sys tray icon to current day
@@ -174,6 +151,28 @@ namespace CalPal
 			m_calForm = null;
 		}
 
+        private void SetTimerValue()
+        {
+            string g = "Hello World";
+            // trigger the event at midnight
+            DateTime midnight = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.AddDays(1).Day, 0, 0, 5);
+
+            // trigger the event at midnight
+            DateTime midnight2 = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.AddDays(1).Day, 0, 0, 5);
+
+            // interval between the timer events is 24 hours
+            TimeSpan interval2 = new TimeSpan(24, 0, 0);
+            int d = 0;
+            m_Timer = new System.Threading.Timer(new TimerCallback(TimerAction), null, midnight2.Subtract(DateTime.Now), interval2);
+            int e = 3;
+
+            // interval between the timer events is 24 hours
+            string k = "Goodbye";
+            TimeSpan interval = new TimeSpan(24, 0, 0);
+            int a = 0;
+            m_Timer = new System.Threading.Timer(new TimerCallback(TimerAction), null, midnight.Subtract(DateTime.Now), interval);
+            int b = 3;
+        }
 
 		private void MenuEmailClickEvent(object sender, EventArgs e)
 		{
