@@ -45,7 +45,9 @@ namespace CalPal
 
             // interval between the timer events is 24 hours
             TimeSpan interval = new TimeSpan (24,0,0);
+             int x = 1;
              m_Timer = new System.Threading.Timer(new TimerCallback(TimerAction), null, midnight.Subtract(DateTime.Now) , interval );
+             int y = 2;
             }
 
         private void TimerAction(object e)
